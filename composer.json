@@ -1,0 +1,13 @@
+{
+    "name": "muhaimenul/larasearch",
+    "description": "A multi type searching package for laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Muhaimenul Islam Ove",
+            "email": "i.muhaimen@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
