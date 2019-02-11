@@ -9,6 +9,8 @@
 namespace Muhaimenul\Larasearch\Services;
 use Muhaimenul\Larasearch\Strategies\LikeSearch;
 use Muhaimenul\Larasearch\Strategies\FulltextSearch;
+use Illuminate\Support\Facades\Config;
+
 
 class SearchService
 {
@@ -16,13 +18,11 @@ class SearchService
 
     public function __construct()
     {
-        $this->searchType = !empty(config('larasearch:formula')) ? config('larasearch:formula') : 'fts';
+        $this->searchType = !empty(Config::get('larasearch.formula')) ? Config::get('larasearch.formula') : 'like';
     }
 
     public function search ($q, $term, $searchable) {
-        $searchType = !empty(config('larasearch:formula')) ? config('larasearch:formula') : 'fts';
-        dd(config('larasearch:formula'));
-        if($searchType == 'fts') $searchObj = new FulltextSearch();
+        if($this->searchType == 'fts') $searchObj = new FulltextSearch();
 //        else if($searchType == 'elastic') $searchObj = new LikeSearch();
         else $searchObj = new LikeSearch();
 //        ($searchType == 'like')

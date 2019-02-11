@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'formula' => env('LARA_SEARCH_TYPE', 'like'),
+    'formula' => env('LARA_SEARCH_TYPE', 'fts'),
 
     'queue' => env('LARA_SEARCH_QUEUE', 'false'),
 

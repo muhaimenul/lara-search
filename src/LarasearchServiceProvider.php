@@ -14,7 +14,7 @@ class LarasearchServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/Config/larasearch.php' => config_path('larasearch.php'),
+            __DIR__.'/../config/larasearch.php' => config_path('larasearch.php'),
         ]);
     }
 
@@ -25,11 +25,10 @@ class LarasearchServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__ . '/Config/larasearch.php', 'larasearch'
-        );
-        config([
-            'config/larasearch.php',
-        ]);
+        if (file_exists(config_path('larasearch.php'))) {
+            $this->mergeConfigFrom(config_path('larasearch.php'), 'larasearch');
+        } else {
+            $this->mergeConfigFrom(__DIR__ . '/../config/larasearch.php', 'larasearch');
+        }
     }
 }
