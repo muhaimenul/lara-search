@@ -38,7 +38,7 @@ class FulltextSearch implements SearchStrategy
     public function search($query, $term, $searchable)
     {
         $columns = implode(',',$searchable);
-
+        // other full-text searching mode will be used
         $query->whereRaw("MATCH ({$columns}) AGAINST (? IN BOOLEAN MODE)" , $this->filterFullTextWildcards($term));
 
         return $query;
