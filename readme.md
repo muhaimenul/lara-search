@@ -10,7 +10,7 @@ LaraSearch (Laravel Search) is a package for Laravel framework  that adds a simp
 
 - [Simple search](#).
 - [MySQL Full-text search](#).
-- [Elastic like search](Future Improvement) 
+- Elastic like search (Future Improvement). 
 
 ## Installation
 

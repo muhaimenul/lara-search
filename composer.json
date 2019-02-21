@@ -1,7 +1,7 @@
 {
     "name": "muhaimenul/lara-search",
     "description": "An eloquent model searching package with various searching configuration.",
-    "keywords": ["laravel", "eloquent", "search", "searchable", "database", "model", "full-text", "muhaimenul"],
+    "keywords": ["laravel", "eloquent", "search", "searchable", "database", "model", "full-text", "muhaimenul", "larasearch"],
     "license": "MIT",
     "authors": [
         {
@@ -11,7 +11,6 @@
             "role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "laravel/framework": ">=4.2"
     },
@@ -24,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Muhaimenul\\Larasearch\\": "packages/muhaimenul/larasearch/src"
+            "Muhaimenul\\Larasearch\\": "src/"
         }
     }
 }
