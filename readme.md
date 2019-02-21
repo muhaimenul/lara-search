@@ -1,5 +1,6 @@
-<p align="center"><img src="https://img.icons8.com/color/48/000000/search.png"> LaraSearch</p>
-
+<h2 align="center">
+<img src="https://img.icons8.com/color/48/000000/search.png" align="middle"> LaraSearch
+</h2>
 <!-- <p align="center"></p> -->
 
 ## About LaraSearch (Laravel Search)
@@ -8,7 +9,7 @@ LaraSearch (Laravel Search) is a package for Laravel framework  that adds a simp
 
 - [Simple search](#).
 - [Powerful mysql Full-text search](#).
-- [Elastic like search](Future Improvement) (Future Improvement) 
+- [Elastic like search](Future Improvement) 
 
 ## Installation
 
