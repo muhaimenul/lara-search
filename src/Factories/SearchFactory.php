@@ -11,24 +11,21 @@ use Exception;
 
 class SearchFactory
 {
-    protected $classNameSpace = 'Muhaimenul\Larasearch\Strategies';
+    const CLASS_NAMESPACE = 'Muhaimenul\Larasearch\Searches\\';
     public function __construct() {
         //
     }
 
-    public static function build ($type = '') {
-        if($type == '') {
-            throw new Exception('Invalid Search Type.');
-        } else {
-
-            $className = 'Muhaimenul\Larasearch\Strategies\\'.ucfirst($type).'Search';
-
-            // Assuming Class files are already loaded using autoload concept
+    public static function build ($type) {
+        if($type) {
+            $className = self::CLASS_NAMESPACE . ucfirst($type).'Search';
             if(class_exists($className)) {
                 return new $className();
             } else {
                 throw new Exception('Invalid Search Type.');
             }
+        } else {
+            throw new Exception('Invalid Search Type.');
         }
     }
 }
