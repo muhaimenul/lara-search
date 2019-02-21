@@ -1,13 +1,19 @@
 {
     "name": "muhaimenul/lara-search",
-    "description": "A multi type searching package for laravel",
+    "description": "An eloquent model searching package with various searching configuration.",
+    "keywords": ["laravel", "eloquent", "search", "searchable", "database", "model", "full-text"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Muhaimenul Islam Ove",
+            "name": "Muhaimenul Islam",
             "email": "i.muhaimen@gmail.com"
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Muhaimenul\\Larasearch\\": "packages/muhaimenul/larasearch/src"
+        }
+    }
 }

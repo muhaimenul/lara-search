@@ -7,8 +7,7 @@
  * Time: 11:17 PM
  */
 namespace Muhaimenul\Larasearch\Services;
-use Muhaimenul\Larasearch\Strategies\LikeSearch;
-use Muhaimenul\Larasearch\Strategies\FulltextSearch;
+
 use Illuminate\Support\Facades\Config;
 use Muhaimenul\Larasearch\Factories\SearchFactory;
 
@@ -24,10 +23,5 @@ class SearchService
     public function search ($q, $term, $searchable) {
         $searchObj = SearchFactory::build($this->searchType);
         $searchObj->search($q, $term, $searchable);
-//        if($this->searchType == 'fts') $searchObj = new FulltextSearch();
-////        else if($searchType == 'elastic') $searchObj = new LikeSearch();
-//        else $searchObj = new LikeSearch();
-////        ($searchType == 'like')
-//        $searchObj->search($q, $term, $searchable);
     }
 }
