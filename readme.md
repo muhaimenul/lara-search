@@ -1,6 +1,6 @@
-<h2 align="center">
-<img src="https://img.icons8.com/color/48/000000/search.png" align="middle"> LaraSearch
-</h2>
+<h1 align="center">
+<img src="https://img.icons8.com/color/48/000000/search.png" align="middle" style="margin-bottom:20px"><span style="font-family: cursive, Times, serif;">LaraSearch</span>
+</h1>
 <!-- <p align="center"></p> -->
 
 ## About LaraSearch (Laravel Search)
