@@ -18,7 +18,7 @@ class SearchFactory
 
     public static function build ($type) {
         if($type) {
-            $className = self::CLASS_NAMESPACE . ucfirst($type).'Search';
+            $className = self::CLASS_NAMESPACE . ucfirst($type) . 'Search';
             if(class_exists($className)) {
                 return new $className();
             } else {
