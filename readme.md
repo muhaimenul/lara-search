@@ -6,13 +6,18 @@
 
 ## About LaraSearch (Laravel Search)
 
-LaraSearch (Laravel Search) is a package for Laravel framework  that adds a simple search function to Eloquent Models. This package makes it easy to get structured search from a variety of sources and provides varieties of configuration and options to select for searching, such as: 
+LaraSearch (Laravel Search) is a Laravel package that adds various searching functionalities to Eloquent Models. This package makes it easy to get structured search from a variety of sources and provides varieties of configurations and options to select for searching, such as: 
 
 - [Simple search](#).
 - [MySQL Full-text search](#).
 - Elastic like search (Future Improvement). 
 
 ## Installation
+
+You can install the package via composer:
+```bash
+composer require muhaimenul/lara-search
+```
 
 ## Using LaraSearch
 
