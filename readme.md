@@ -65,12 +65,12 @@ $users = User::where('status', 'active')
             ->search($query)
             ->paginate(20);
 ```
-## Simple Search
-## Using LaraSearch
 
 ## Simple Search
+Simple search uses eloquent WHERE and sql LIKE operator to search for a specified pattern in a column.
 
 ## Full-text Search
+Full-Text Search in MySQL server lets users run full-text queries against character-based data in MySQL tables. You must create a full-text index on the table before you run full-text queries on a table. 
 
 ## Contributing
 
