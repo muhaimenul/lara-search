@@ -14,16 +14,16 @@
     "require": {
         "laravel/framework": ">=4.2"
     },
+    "autoload": {
+        "psr-4": {
+            "Muhaimenul\\Larasearch\\": "src/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "Muhaimenul\\Larasearch\\LarasearchServiceProvider"
             ]
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "Muhaimenul\\Larasearch\\": "src/"
         }
     }
 }
