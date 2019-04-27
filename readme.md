@@ -6,7 +6,7 @@
 
 ## About LaraSearch (Laravel Search)
 
-LaraSearch (Laravel Search) is a package for Laravel framework  that adds a simple search function to Eloquent Models. This package makes it easy to get structured search from a variety of sources and provides varieties of configuration and options to select for searching, such as: 
+LaraSearch (Laravel Search) is a Laravel package that adds various searching functionalities to Eloquent Models. This package makes it easy to get structured search from a variety of sources and provides varieties of configurations and options to select for searching, such as: 
 
 - [Simple search](#).
 - [MySQL Full-text search](#).
@@ -14,6 +14,58 @@ LaraSearch (Laravel Search) is a package for Laravel framework  that adds a simp
 
 ## Installation
 
+You can install the package via composer:
+```bash
+composer require muhaimenul/lara-search
+```
+
+## Usage
+### Preaparing your models
+Add the ```LaraSearch``` trait to your model and ```$searchable``` columns as your search rules.
+```php
+use Muhaimenul\Larasearch\Traits\LaraSearch;
+
+class User extends Model
+{
+    use LaraSearch;
+
+    /**
+     * Columns that are considered for search results.
+     *
+     * @var array
+     */
+    protected $searchable = [
+        'first_name', 'last_name', 'email'
+    ];
+}
+```
+### Searching models
+With the models prepared you can search them like this:
+```php
+// Simple search
+$users = User::search($query)->get();
+
+// Search and get relations
+// It will not get the relations if you don't do this
+$users = User::search($query)
+            ->with('posts')
+            ->get();
+```
+
+#### Search like default queries
+This Search methos is compatable with any eloquent methods and Paginatation like laravel default queries. Such as,
+```php
+// Search with relations and pagination
+$users = User::search($query)
+            ->with('posts')
+            ->paginate(20);
+            
+// Search only active users check
+$users = User::where('status', 'active')
+            ->search($query)
+            ->paginate(20);
+```
+## Simple Search
 ## Using LaraSearch
 
 ## Simple Search
