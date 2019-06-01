@@ -8,9 +8,9 @@
 
 LaraSearch (Laravel Search) is a Laravel package that adds various searching functionalities to Eloquent Models. This package makes it easy to get structured search from a variety of sources and provides varieties of configurations and options to select for searching, such as: 
 
-- [Simple search](#simple).
-- [MySQL Full-text search](#fts).
-- Elastic like search (Future Improvement). 
+- [Simple search](#simple)
+- [MySQL Full-text search](#fts)
+- Elastic like search (Future Improvement)
 
 ## Installation
 
@@ -96,6 +96,7 @@ You can directly assign formula type in `larasearch.php` or use `.env` and assig
 By default, this package uses [Simple Search](#simple), which doesn't need any publishing or additional configuration. But to use [FullText Search](#fts), you have to publish the package and follow below configuration.
 
 ## <div id="ftindex"> Setup Full-Text Search</div>
+
 To use Full-text search, only additional full-text index is needed. Rest of the searching process is same.
 - Fulltext search can only be used with MySQL 5.6+, else the Database Engine must be set to MyISAM instead of InnoDB.
  - Then set up the migration and add the Full-Text index.
