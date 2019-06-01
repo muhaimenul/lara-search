@@ -67,10 +67,31 @@ $users = User::where('status', 'active')
 ```
 
 ## Simple Search
-Simple search uses eloquent WHERE and sql LIKE operator to search for a specified pattern in a column.
+Simple search uses eloquent WHERE and sql LIKE operator to search for a specified pattern in a column. By default, this package uses it and  No additional configuration is needed. Just follow above instructions to use Simple Search.
 
 ## Full-text Search
 Full-Text Search in MySQL server lets users run full-text queries against character-based data in MySQL tables. You must create a full-text index on the table before you run full-text queries on a table. 
+
+If you want to use it, then you will have to publish to package in order to enable it from config.
+
+## Publishing
+
+You can publish everything at once:
+```bash
+php artisan vendor:publish --provider="muhaimenul\larasearch\LarasearchServiceProvider"
+```
+## Configuration
+
+After publishing the package you will find, `larasearch.php` configuration file in the `config` folder.
+
+Here, the '`formula`' is the key to determine this project's search type. Currently there are two types of configuration, '`fulltext`' (FullText Search) and '`like`' (Simple Search).
+
+You can directly assign formula type in `larasearch.php` or use `.env` and assign value to 'LARA_SEARCH_TYPE' alias.
+
+By default, this package uses Simple Search, which doesn't need publishing or additional configuration. But to use FullText Search, you have to publish the package and follow below configuration.
+
+## Setup Full-Text Search
+
 
 ## Contributing
 
