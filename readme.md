@@ -19,7 +19,7 @@ You can install the package via composer:
 composer require muhaimenul/lara-search
 ```
 
-## <p id="usage">Usage</p>
+## <div id="usage">Usage</div>
 ### Preaparing your models
 Add the ```LaraSearch``` trait to your model and ```$searchable``` columns as your search rules.
 ```php
@@ -66,10 +66,10 @@ $users = User::where('status', 'active')
             ->paginate(20);
 ```
 
-## <p id="simple">Simple Search</p>
+## <div id="simple">Simple Search</div>
 Simple search uses eloquent WHERE and sql LIKE operator to search for a specified pattern in a column. By default, this package uses it and  No additional configuration is needed. Just follow above [instructions](#usage) to use Simple Search.
 
-## <p id="fts">MySQL Full-text Search</p>
+## <div id="fts">MySQL Full-text Search</div>
 Full-Text Search in MySQL server lets users run full-text queries against character-based data in MySQL tables. It is a powerful features that allows searching text efficiently accross multiple columns. It provides searching functionalites like Algolia but more native to MySQL. To learn more [see here](https://www.w3resource.com/mysql/mysql-full-text-search-functions.php). From  version 4, Laravel doesn't support FULLTEXT indexes by default. So, a [full-text index](#ftindex) must be created on the table before running full-text queries on a table. 
 
 If you want to use it, then you will have to publish to package in order to enable it from config.
@@ -95,7 +95,7 @@ You can directly assign formula type in `larasearch.php` or use `.env` and assig
 
 By default, this package uses [Simple Search](#simple), which doesn't need any publishing or additional configuration. But to use [FullText Search](#fts), you have to publish the package and follow below configuration.
 
-## <p id="ftindex">Setup Full-Text Search</p>
+## <div id="ftindex"> Setup Full-Text Search</div>
 To use Full-text search, only additional full-text index is needed. Rest of the searching process is same.
 - Fulltext search can only be used with MySQL 5.6+, else the Database Engine must be set to MyISAM instead of InnoDB.
  - Then set up the migration and add the Full-Text index.
