@@ -8,8 +8,8 @@
 
 LaraSearch (Laravel Search) is a Laravel package that adds various searching functionalities to Eloquent Models. This package makes it easy to get structured search from a variety of sources and provides varieties of configurations and options to select for searching, such as: 
 
-- [Simple search](#).
-- [MySQL Full-text search](#).
+- [Simple search](#simple).
+- [MySQL Full-text search](#fts).
 - Elastic like search (Future Improvement). 
 
 ## Installation
@@ -19,7 +19,7 @@ You can install the package via composer:
 composer require muhaimenul/lara-search
 ```
 
-## Usage
+## <p id="usage">Usage</p>
 ### Preaparing your models
 Add the ```LaraSearch``` trait to your model and ```$searchable``` columns as your search rules.
 ```php
@@ -66,11 +66,11 @@ $users = User::where('status', 'active')
             ->paginate(20);
 ```
 
-## Simple Search
-Simple search uses eloquent WHERE and sql LIKE operator to search for a specified pattern in a column. By default, this package uses it and  No additional configuration is needed. Just follow above instructions to use Simple Search.
+## <p id="simple">Simple Search</p>
+Simple search uses eloquent WHERE and sql LIKE operator to search for a specified pattern in a column. By default, this package uses it and  No additional configuration is needed. Just follow above [instructions](#usage) to use Simple Search.
 
-## Full-text Search
-Full-Text Search in MySQL server lets users run full-text queries against character-based data in MySQL tables. You must create a full-text index on the table before you run full-text queries on a table. 
+## <p id="fts">MySQL Full-text Search</p>
+Full-Text Search in MySQL server lets users run full-text queries against character-based data in MySQL tables. It is a powerful features that allows searching text efficiently accross multiple columns. It provides searching functionalites like Algolia but more native to MySQL. To learn more [see here](https://www.w3resource.com/mysql/mysql-full-text-search-functions.php). From  version 4, Laravel doesn't support FULLTEXT indexes by default. So, a [full-text index](#ftindex) must be created on the table before running full-text queries on a table. 
 
 If you want to use it, then you will have to publish to package in order to enable it from config.
 
@@ -86,12 +86,42 @@ After publishing the package you will find, `larasearch.php` configuration file 
 
 Here, the '`formula`' is the key to determine this project's search type. Currently there are two types of configuration, '`fulltext`' (FullText Search) and '`like`' (Simple Search).
 
+```php
+// fulltext or like
+    'formula' => env('LARA_SEARCH_TYPE', 'fulltext'),
+```
+
 You can directly assign formula type in `larasearch.php` or use `.env` and assign value to 'LARA_SEARCH_TYPE' alias.
 
-By default, this package uses Simple Search, which doesn't need publishing or additional configuration. But to use FullText Search, you have to publish the package and follow below configuration.
+By default, this package uses [Simple Search](#simple), which doesn't need any publishing or additional configuration. But to use [FullText Search](#fts), you have to publish the package and follow below configuration.
 
-## Setup Full-Text Search
+## <p id="ftindex">Setup Full-Text Search</p>
+To use Full-text search, only additional full-text index is needed. Rest of the searching process is same.
+- Fulltext search can only be used with MySQL 5.6+, else the Database Engine must be set to MyISAM instead of InnoDB.
+ - Then set up the migration and add the Full-Text index.
 
+```php
+public function up()
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('first_name');
+        $table->string('last_name');
+        $table->string('email')->unique();
+    });
+ 
+    // Full Text Index
+    DB::statement('ALTER TABLE users ADD FULLTEXT fulltext_index (first_name, last_name, email)');
+}
+```
+
+NOTE: Here, `fulltext_index (first_name, last_name, email)` must have to be same as the `protected $searchable` columns / array added in the model.
+
+Then, run the migrations.
+```
+php artisan migrate
+```
+Voalá! The setup is done. Now The powrfull fulltext search can be used easily by this package following the initial [usage](#usage).
 
 ## Contributing
 
