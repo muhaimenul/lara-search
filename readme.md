@@ -1,8 +1,12 @@
 <h1 align="center">
 <img src="https://img.icons8.com/color/48/000000/search.png" align="center" >LaraSearch
 </h1>
-<!--  𝕷𝖆𝖗𝖆𝕾𝖊𝖆𝖗𝖈𝖍
-<p align="center"></p>  -->
+
+ <!-- 𝕷𝖆𝖗𝖆𝕾𝖊𝖆𝖗𝖈𝖍 -->
+<!-- <p align="center"></p>  -->
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/muhaimenul/lara-search.svg?style=flat-square)](https://packagist.org/packages/muhaimenul/lara-search)
+[![Total Downloads](https://img.shields.io/packagist/dt/muhaimenul/lara-search.svg?style=flat-square)](https://packagist.org/packages/muhaimenul/lara-search)
 
 ## About LaraSearch (Laravel Search)
 
@@ -124,14 +128,22 @@ php artisan migrate
 ```
 Voalá! The setup is done. Now The powrfull fulltext search can be used easily by this package following the initial [usage](#usage).
 
+### Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
 ## Contributing
 
-[Muhaimenul Islam](https://github.com/muhaimenul)
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 <!-- Thank you for considering contributing to the package! The contribution guide can be found in the [Documentation](#). -->
 
 ## Security Vulnerabilities
 
 If you discover a security vulnerability or bugs within LaraSearch, please send an e-mail to Muhaimenul Islam via [i.muhaimen@gmail.com](mailto:i.muhaimen@gmail.com).
+
+## Credits
+
+-   [Muhaimenul Islam](https://github.com/muhaimenul)
 
 ## License
 
