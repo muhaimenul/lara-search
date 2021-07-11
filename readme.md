@@ -7,6 +7,8 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/muhaimenul/lara-search.svg?style=flat-square)](https://packagist.org/packages/muhaimenul/lara-search)
 [![Total Downloads](https://img.shields.io/packagist/dt/muhaimenul/lara-search.svg?style=flat-square)](https://packagist.org/packages/muhaimenul/lara-search)
+[![GitHub license](https://img.shields.io/badge/license-MIT-orange.svg)](https://raw.githubusercontent.com/muhaimenul/lara-crud/master/LICENSE)
+[![Awesome Laravel](https://img.shields.io/badge/Awesome-Laravel-brightgreen.svg)](https://github.com/muhaimenul/lara-search)
 
 ## About LaraSearch (Laravel Search)
 
@@ -24,7 +26,7 @@ composer require muhaimenul/lara-search
 ```
 
 ## <div id="usage">Usage</div>
-### Preaparing your models
+### Preparing your models
 Add the ```LaraSearch``` trait to your model and ```$searchable``` columns as your search rules.
 ```php
 use Muhaimenul\Larasearch\Traits\LaraSearch;
