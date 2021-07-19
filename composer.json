@@ -25,5 +25,8 @@
                 "Muhaimenul\\Larasearch\\LarasearchServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
 }
