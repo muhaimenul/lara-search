@@ -31,6 +31,6 @@
     </testsuites>
     <php>
         <env name="CACHE_DRIVER" value="array"/>
-        <env name="APP_KEY" value="base64:2fl+Ktvkfl+Fuz4Qp/A75G2RTiWVA/ZoKZvp6fiiM10="/>
+        <env name="APP_KEY" value="base64:qSvC2rAcC3oES5HVAVWVCK4ggLNztj5K9gM/mYUOA2M="/>
     </php>
 </phpunit>

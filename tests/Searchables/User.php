@@ -11,15 +11,17 @@ namespace Muhaimenul\Larasearch\Tests\Searchables;
 
 
 use Illuminate\Database\Eloquent\Model;
+
 use Muhaimenul\Larasearch\Traits\LaraSearch;
 
 class User extends Model
 {
     use LaraSearch;
 
-    protected $fillable = ['email'];
-
-    public $timestamps = false;
-
     protected $table = 'users';
+
+    protected $searchable = [
+        'email'
+    ];
+
 }

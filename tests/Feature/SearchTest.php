@@ -2,7 +2,7 @@
 
 namespace Muhaimenul\Larasearch\Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Muhaimenul\Larasearch\Tests\Searchables\User;
 use Muhaimenul\Larasearch\Tests\TestCase;
 
 class SearchTest extends TestCase
@@ -12,12 +12,22 @@ class SearchTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_search()
     {
-        $this->assertTrue(true);
 
-//        $response = $this->get('/');
-//
-//        $response->assertStatus(200);
+        $query = 'demo';
+
+        $users = User::search($query)->get();
+
+        $this->assertCount(
+            4,
+            $users->toArray(), "users doesn't contains 4 elements"
+        );
+
+//        $this->assertGreaterThan(
+//            4,
+//            $users->count(),
+//            "actual value is not greater than expected"
+//        );
     }
 }
