@@ -8,8 +8,6 @@ use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 abstract class TestCase extends OrchestraTestCase
 {
-    use CreatesApplication;
-
     /**
      * Setup the test environment.
      */
@@ -35,10 +33,5 @@ abstract class TestCase extends OrchestraTestCase
         return [
             LarasearchServiceProvider::class,
         ];
-    }
-
-    protected function getEnvironmentSetUp($app)
-    {
-        // perform environment setup
     }
 }
