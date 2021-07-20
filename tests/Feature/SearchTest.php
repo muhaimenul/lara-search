@@ -5,7 +5,7 @@ namespace Muhaimenul\Larasearch\Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Muhaimenul\Larasearch\Tests\TestCase;
 
-class ExampleTest extends TestCase
+class SearchTest extends TestCase
 {
     /**
      * A basic test example.
