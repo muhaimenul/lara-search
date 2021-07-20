@@ -19,6 +19,11 @@
             "Muhaimenul\\Larasearch\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Muhaimenul\\Larasearch\\Tests\\": "tests"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
