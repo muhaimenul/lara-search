@@ -19,17 +19,19 @@ class SearchTest extends TestCase
     {
 
         $queryString = 'demo';
+        $minCount = 1;
+        $expectedCount = 4;
 
-        $users = User::search($queryString)->get();
+        $users = $this->testSearchableModel->search($queryString)->get();
 
         $this->assertGreaterThan(
-            1,
+            $minCount,
             $users->count(),
             "actual value is not greater than expected"
         );
 
         $this->assertCount(
-            4,
+            $expectedCount,
             $users->toArray(),
             "users doesn't contains 4 elements"
         );
@@ -43,6 +45,6 @@ class SearchTest extends TestCase
 
         $this->expectException(Exception::class);
 
-        User::search('query-string');
+        $this->testSearchableModel->search('query-string');
     }
 }
