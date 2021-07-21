@@ -25,11 +25,10 @@ class SearchFactory
             $className = self::CLASS_NAMESPACE . ucfirst($type) . 'Search';
             if (class_exists($className)) {
                 return new $className();
-            } else {
-                throw new Exception('Invalid Search Type.');
             }
-        } else {
-            throw new Exception('Invalid Search Type.');
         }
+
+        throw new Exception('Invalid Search Type.');
+
     }
 }
