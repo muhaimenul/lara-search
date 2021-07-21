@@ -4,6 +4,9 @@ namespace Muhaimenul\Larasearch\Tests\Feature;
 
 use Muhaimenul\Larasearch\Tests\Searchables\User;
 use Muhaimenul\Larasearch\Tests\TestCase;
+use Config;
+use Exception;
+
 
 class SearchTest extends TestCase
 {
@@ -15,9 +18,9 @@ class SearchTest extends TestCase
     public function test_search()
     {
 
-        $query = 'demo';
+        $queryString = 'demo';
 
-        $users = User::search($query)->get();
+        $users = User::search($queryString)->get();
 
         $this->assertGreaterThan(
             1,
@@ -34,10 +37,12 @@ class SearchTest extends TestCase
     }
 
     /** @test */
-//    public function it_throws_an_exception_when_given_search_type_does_not_exist()
-//    {
-//        $this->expectException();
-//
-//        $this->testUser->search('query-string');
-//    }
+    public function it_throws_an_exception_when_given_search_type_does_not_exist()
+    {
+        Config::set('larasearch.formula', 'xyz');
+
+        $this->expectException(Exception::class);
+
+        User::search('query-string');
+    }
 }
