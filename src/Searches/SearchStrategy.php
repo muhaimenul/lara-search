@@ -5,8 +5,10 @@
  * Date: 1/21/2019
  * Time: 11:09 PM
  */
+
 namespace Muhaimenul\Larasearch\Searches;
 
-interface SearchStrategy {
+interface SearchStrategy
+{
     public function search($query, $term, $searchable);
 }

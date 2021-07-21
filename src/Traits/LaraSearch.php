@@ -23,11 +23,8 @@ trait LaraSearch
     public function scopeSearch($query, $term)
     {
         $searchService = new SearchService;
+
         return $searchService->search($query, $term, $this->searchable);
-//        $columns = implode(',',$this->searchable);
 
-//        $query->whereRaw("MATCH ({$columns}) AGAINST (? IN BOOLEAN MODE)" , $this->fullTextWildcards($term));
-
-//        return $query;
     }
 }
