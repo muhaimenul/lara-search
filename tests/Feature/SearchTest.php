@@ -2,7 +2,6 @@
 
 namespace Muhaimenul\Larasearch\Tests\Feature;
 
-use Muhaimenul\Larasearch\Tests\Searchables\User;
 use Muhaimenul\Larasearch\Tests\TestCase;
 use Config;
 use Exception;

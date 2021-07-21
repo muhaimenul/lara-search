@@ -2,7 +2,6 @@
 
 namespace Muhaimenul\Larasearch\Tests;
 
-//use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Muhaimenul\Larasearch\LarasearchServiceProvider;
 use Muhaimenul\Larasearch\Tests\Searchables\User;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
