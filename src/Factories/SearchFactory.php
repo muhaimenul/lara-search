@@ -7,19 +7,23 @@
  */
 
 namespace Muhaimenul\Larasearch\Factories;
+
 use Exception;
 
 class SearchFactory
 {
     const CLASS_NAMESPACE = 'Muhaimenul\Larasearch\Searches\\';
-    public function __construct() {
+
+    public function __construct()
+    {
         //
     }
 
-    public static function build ($type) {
-        if($type) {
+    public static function build($type)
+    {
+        if ($type) {
             $className = self::CLASS_NAMESPACE . ucfirst($type) . 'Search';
-            if(class_exists($className)) {
+            if (class_exists($className)) {
                 return new $className();
             } else {
                 throw new Exception('Invalid Search Type.');

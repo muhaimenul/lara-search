@@ -14,7 +14,7 @@ class LarasearchServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/larasearch.php' => config_path('larasearch.php'),
+            __DIR__ . '/../config/larasearch.php' => config_path('larasearch.php'),
         ]);
     }
 

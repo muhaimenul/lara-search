@@ -6,6 +6,7 @@
  * Date: 1/21/2019
  * Time: 11:15 PM
  */
+
 namespace Muhaimenul\Larasearch\Searches;
 
 class LikeSearch implements SearchStrategy
@@ -15,10 +16,8 @@ class LikeSearch implements SearchStrategy
         $query->where($searchable[0], 'Like', '%' . $term . '%');
         $length = count($searchable);
 
-        if($length > 1)
-        {
-            for($i = 1; $i < $length; $i++)
-            {
+        if ($length > 1) {
+            for ($i = 1; $i < $length; $i++) {
                 $query->orWhere($searchable[$i], 'Like', '%' . $term . '%');
             }
         }
