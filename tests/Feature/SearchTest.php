@@ -19,15 +19,25 @@ class SearchTest extends TestCase
 
         $users = User::search($query)->get();
 
-        $this->assertCount(
-            4,
-            $users->toArray(), "users doesn't contains 4 elements"
+        $this->assertGreaterThan(
+            1,
+            $users->count(),
+            "actual value is not greater than expected"
         );
 
-//        $this->assertGreaterThan(
-//            4,
-//            $users->count(),
-//            "actual value is not greater than expected"
-//        );
+        $this->assertCount(
+            4,
+            $users->toArray(),
+            "users doesn't contains 4 elements"
+        );
+
     }
+
+    /** @test */
+//    public function it_throws_an_exception_when_given_search_type_does_not_exist()
+//    {
+//        $this->expectException();
+//
+//        $this->testUser->search('query-string');
+//    }
 }
