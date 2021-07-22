@@ -1,8 +1,7 @@
 <?php
 
-namespace Muhaimenul\Larasearch\Tests\Feature;
+namespace Muhaimenul\Larasearch\Tests;
 
-use Muhaimenul\Larasearch\Tests\TestCase;
 use Config;
 use Exception;
 
