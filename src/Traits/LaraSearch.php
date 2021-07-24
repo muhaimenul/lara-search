@@ -8,11 +8,51 @@
 
 namespace Muhaimenul\Larasearch\Traits;
 
+use Illuminate\Database\Eloquent\Concerns\GuardsAttributes;
 use Muhaimenul\Larasearch\Services\SearchService;
 
 
 trait LaraSearch
 {
+
+    /**
+     * Get the searchable attributes for the model.
+     *
+     * @return array
+     */
+    public function getSearchable()
+    {
+        return $this->searchable;
+    }
+
+    /**
+     * Set the searchable attributes for the model.
+     *
+     * @param  array  $searchable
+     * @return $this
+     */
+    public function searchable(array $searchable)
+    {
+        $this->searchable = $searchable;
+
+        return $this;
+    }
+
+
+    /**
+     * Merge new searchable attributes with existing searchable attributes on the model.
+     *
+     * @param  array  $searchable
+     * @return $this
+     */
+    public function mergeSearchable(array $searchable)
+    {
+        $this->searchable = array_merge($this->searchable, $searchable);
+
+        return $this;
+    }
+
+
     /**
      * Scope a query that matches a full text search of term.
      *
@@ -24,7 +64,7 @@ trait LaraSearch
     {
         $searchService = new SearchService;
 
-        return $searchService->search($query, $term, $this->searchable);
+        return $searchService->search($query, $term, $this->getSearchable());
 
     }
 }

@@ -48,12 +48,15 @@ class User extends Model
 ### Searching models
 With the models prepared you can search them like this:
 ```php
+// search string
+$queryString = 'xyz';
+
 // Simple search
-$users = User::search($query)->get();
+$users = User::search($queryString)->get();
 
 // Search and get relations
 // It will not get the relations if you don't do this
-$users = User::search($query)
+$users = User::search($queryString)
             ->with('posts')
             ->get();
 ```
@@ -62,13 +65,13 @@ $users = User::search($query)
 This Search methos is compatable with any eloquent methods and Paginatation like laravel default queries. Such as,
 ```php
 // Search with relations and pagination
-$users = User::search($query)
+$users = User::search($queryString)
             ->with('posts')
             ->paginate(20);
             
 // Search only active users check
 $users = User::where('status', 'active')
-            ->search($query)
+            ->search($queryString)
             ->paginate(20);
 ```
 
